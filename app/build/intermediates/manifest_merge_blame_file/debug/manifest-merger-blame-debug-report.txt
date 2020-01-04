@@ -1,0 +1,116 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.planeapplication"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="23"
+8-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:4:5-66
+11-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:4:22-64
+12    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+12-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:5:5-80
+12-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:5:22-78
+13
+14    <uses-feature
+14-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:32:5-35:11
+15        android:glEsVersion="0x00020000"
+15-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:33:9-41
+16        android:required="true" />
+16-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:34:9-32
+17
+18    <!-- Include required permissions for Google Maps API to run. -->
+19    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+19-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\marc-\.gradle\caches\transforms-2\files-2.1\b6f40824f159f6ef54587d73ab962690\play-services-maps-17.0.0\AndroidManifest.xml:23:5-79
+19-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\marc-\.gradle\caches\transforms-2\files-2.1\b6f40824f159f6ef54587d73ab962690\play-services-maps-17.0.0\AndroidManifest.xml:23:22-76
+20
+21    <application
+21-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:6:5-31:19
+22        android:name="com.example.planeapplication.FlightApplication"
+22-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:7:9-42
+23        android:allowBackup="true"
+23-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:8:9-35
+24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+24-->[androidx.core:core:1.2.0-rc01] C:\Users\marc-\.gradle\caches\transforms-2\files-2.1\9cb08605457160e549bf07c97944b891\core-1.2.0-rc01\AndroidManifest.xml:24:18-86
+25        android:debuggable="true"
+26        android:icon="@mipmap/ic_launcher"
+26-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:9:9-43
+27        android:label="@string/app_name"
+27-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:10:9-41
+28        android:roundIcon="@mipmap/ic_launcher_round"
+28-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:11:9-54
+29        android:supportsRtl="true"
+29-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:12:9-35
+30        android:testOnly="true"
+31        android:theme="@style/AppTheme" >
+31-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:13:9-40
+32        <meta-data
+32-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:14:9-16:69
+33            android:name="com.google.android.gms.version"
+33-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:15:13-58
+34            android:value="@integer/google_play_services_version" />
+34-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:16:13-66
+35        <meta-data
+35-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:17:9-19:71
+36            android:name="com.google.android.geo.API_KEY"
+36-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:18:13-58
+37            android:value="AIzaSyDiEpO4T-iywqQyEaYMgDon9lJ0gfgnoH8" />
+37-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:19:13-68
+38
+39        <activity android:name="com.example.planeapplication.GlobalActivity" />
+39-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:20:9-61
+39-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:20:19-49
+40        <activity
+40-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:21:9-30:20
+41            android:name="com.example.planeapplication.MainActivity"
+41-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:22:13-41
+42            android:label="@string/app_name"
+42-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:23:13-45
+43            android:theme="@style/AppTheme.NoActionBar" >
+43-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:24:13-56
+44            <intent-filter>
+44-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:25:13-29:29
+45                <action android:name="android.intent.action.MAIN" />
+45-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:26:17-69
+45-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:26:25-66
+46
+47                <category android:name="android.intent.category.LAUNCHER" />
+47-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:28:17-77
+47-->D:\Workspace\Android\AndroidPlane-master\app\src\main\AndroidManifest.xml:28:27-74
+48            </intent-filter>
+49        </activity>
+50        <!-- Needs to be explicitly declared on P+ -->
+51        <uses-library
+51-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\marc-\.gradle\caches\transforms-2\files-2.1\b6f40824f159f6ef54587d73ab962690\play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
+52            android:name="org.apache.http.legacy"
+52-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\marc-\.gradle\caches\transforms-2\files-2.1\b6f40824f159f6ef54587d73ab962690\play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
+53            android:required="false" />
+53-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\marc-\.gradle\caches\transforms-2\files-2.1\b6f40824f159f6ef54587d73ab962690\play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
+54
+55        <activity
+55-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\marc-\.gradle\caches\transforms-2\files-2.1\bd7ffce8bc7e102b617ae65808d5ed1c\play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+56            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+56-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\marc-\.gradle\caches\transforms-2\files-2.1\bd7ffce8bc7e102b617ae65808d5ed1c\play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+57            android:exported="false"
+57-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\marc-\.gradle\caches\transforms-2\files-2.1\bd7ffce8bc7e102b617ae65808d5ed1c\play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+58            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+58-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\marc-\.gradle\caches\transforms-2\files-2.1\bd7ffce8bc7e102b617ae65808d5ed1c\play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+59
+60        <provider
+60-->[androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\marc-\.gradle\caches\transforms-2\files-2.1\0661e55369797cfbcda259c94ecab98c\lifecycle-process-2.1.0\AndroidManifest.xml:23:9-27:43
+61            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+61-->[androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\marc-\.gradle\caches\transforms-2\files-2.1\0661e55369797cfbcda259c94ecab98c\lifecycle-process-2.1.0\AndroidManifest.xml:24:13-79
+62            android:authorities="com.example.planeapplication.lifecycle-process"
+62-->[androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\marc-\.gradle\caches\transforms-2\files-2.1\0661e55369797cfbcda259c94ecab98c\lifecycle-process-2.1.0\AndroidManifest.xml:25:13-69
+63            android:exported="false"
+63-->[androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\marc-\.gradle\caches\transforms-2\files-2.1\0661e55369797cfbcda259c94ecab98c\lifecycle-process-2.1.0\AndroidManifest.xml:26:13-37
+64            android:multiprocess="true" />
+64-->[androidx.lifecycle:lifecycle-process:2.1.0] C:\Users\marc-\.gradle\caches\transforms-2\files-2.1\0661e55369797cfbcda259c94ecab98c\lifecycle-process-2.1.0\AndroidManifest.xml:27:13-40
+65    </application>
+66
+67</manifest>
