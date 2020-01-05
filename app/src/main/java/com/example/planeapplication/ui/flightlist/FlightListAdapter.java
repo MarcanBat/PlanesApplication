@@ -125,7 +125,7 @@ public class FlightListAdapter extends RecyclerView.Adapter<FlightListAdapter.Fl
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    GlobalActivity.startActivity(context, icao24, begin);
+                    GlobalActivity.startActivity(context, icao24, begin, 1);
                 }
             });
         }

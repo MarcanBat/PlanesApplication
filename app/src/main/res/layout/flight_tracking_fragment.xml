@@ -10,4 +10,10 @@
         android:layout_height="match_parent"
         android:id="@+id/map"
         />
+
+    <Button
+        android:id="@+id/bt_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Voir détail de l'avion" />
 </FrameLayout>

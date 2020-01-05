@@ -1243,6 +1243,7 @@ id barrier
 id beginning
 id blocking
 id bottom
+id bt_detail
 id buttonPanel
 id cancel_action
 id center
@@ -1294,6 +1295,7 @@ id filled
 id fixed
 id flightlist
 id forever
+id fragment_info
 id from_date
 id from_textview
 id ghost_view
@@ -1320,6 +1322,11 @@ id lblDateArr
 id lblDateDep
 id lblNameFlight
 id lblTempsTot
+id lblVolEnCours
+id lbl_altitude
+id lbl_icao
+id lbl_traj
+id lbl_vitesse
 id left
 id light
 id line1
@@ -1327,6 +1334,7 @@ id line3
 id listMode
 id list_item
 id map
+id map_position
 id masked
 id media_actions
 id message
@@ -1367,6 +1375,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id recyclerview
+id recyclerviewInfo
 id right
 id right_icon
 id right_side
@@ -1456,6 +1465,11 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id tv_altitude
+id tv_icao
+id tv_traj
+id tv_vitesse
+id tv_volEnCours
 id unchecked
 id uniform
 id unlabeled
@@ -1543,15 +1557,16 @@ layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout flight_list_fragment
 layout flight_tracking_fragment
+layout fragment_flight_info
 layout fragment_gallery
 layout fragment_home
+layout fragment_info_realtime_plane
 layout fragment_send
 layout fragment_share
 layout fragment_slideshow
 layout fragment_tools
 layout global_activity
 layout item_flight
-layout map_fragment
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout nav_header_main

@@ -2,6 +2,7 @@ package com.example.planeapplication.ui.home;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -176,6 +177,7 @@ homeViewModel.getFromCalendarLive().setValue(calendar);
         }
         long begin = fromCalendar.getTimeInMillis() / 1000;
         long end = toCalendar.getTimeInMillis() / 1000;
+        Log.i("HomeFragment",selectedAirport.getIcao());
         GlobalActivity.startActivity(getActivity(), begin, end, isArrival, selectedAirport.getIcao());
     }
 }

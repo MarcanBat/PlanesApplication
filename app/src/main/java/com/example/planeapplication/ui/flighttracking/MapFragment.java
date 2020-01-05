@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -15,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.planeapplication.GlobalActivity;
 import com.example.planeapplication.R;
 
 import com.example.planeapplication.data.FlightTrack;
@@ -30,21 +32,17 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
+
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CustomCap;
 import com.google.android.gms.maps.model.Dash;
 import com.google.android.gms.maps.model.Dot;
 import com.google.android.gms.maps.model.Gap;
 import com.google.android.gms.maps.model.JointType;
-import com.google.android.gms.maps.model.LatLng;
+
 import com.google.android.gms.maps.model.PatternItem;
 import com.google.android.gms.maps.model.Polygon;
-import com.google.android.gms.maps.model.PolygonOptions;
-import com.google.android.gms.maps.model.Polyline;
-import com.google.android.gms.maps.model.PolylineOptions;
+
 import com.google.android.gms.maps.model.RoundCap;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -53,14 +51,9 @@ import java.util.List;
 public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleMap.OnPolylineClickListener, GoogleMap.OnPolygonClickListener
 {
     private static final int COLOR_BLACK_ARGB = 0xff000000;
-    private static final int COLOR_WHITE_ARGB = 0xffffffff;
-    private static final int COLOR_GREEN_ARGB = 0xff388E3C;
-    private static final int COLOR_PURPLE_ARGB = 0xff81C784;
-    private static final int COLOR_ORANGE_ARGB = 0xffF57F17;
-    private static final int COLOR_BLUE_ARGB = 0xffF9A825;
+
 
     private static final int POLYLINE_STROKE_WIDTH_PX = 12;
-    private static final int POLYGON_STROKE_WIDTH_PX = 8;
     private static final int PATTERN_DASH_LENGTH_PX = 20;
     private static final int PATTERN_GAP_LENGTH_PX = 20;
     private static final PatternItem DOT = new Dot();
@@ -80,7 +73,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
 
 
 
-    private static final String TAG = FlightListFragment.class.getSimpleName();
+    private static final String TAG = MapFragment.class.getSimpleName();
 
     private static final String TRACK_FLIGHT = "track_flight";
     private static final String ICAO         = "icao";
@@ -91,6 +84,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
     private View root;
     private FlightTrack mFlightTrack;
     private List<LatLng> listPoint = new ArrayList<>();
+    private Button btDetailPlane;
 
     public static MapFragment newInstance()
     {
@@ -138,6 +132,16 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
                  stylePolyline(polyline1);
                 CameraPosition cam = CameraPosition.builder().target(listPoint.get(0)).zoom(4).bearing(0).tilt(0).build();
                 googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(cam));
+
+                btDetailPlane = root.findViewById(R.id.bt_detail);
+                btDetailPlane.setOnClickListener(new View.OnClickListener()
+                {
+                    @Override
+                    public void onClick(View view)
+                    {
+                        doSearchInfo();
+                    }
+                });
             }
         });
 
@@ -148,22 +152,18 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
         root = inflater.inflate(R.layout.flight_tracking_fragment, container, false);
-
         return root;
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         mapView = (MapView) root.findViewById(R.id.map);
         if (mapView != null){
             mapView.onCreate(null);
             mapView.onResume();
             mapView.getMapAsync(this);
         }
-
-
     }
 
 
@@ -230,5 +230,13 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
         polygon.setFillColor(color);
 
         Toast.makeText(getContext(), "Area type " + polygon.getTag().toString(), Toast.LENGTH_SHORT).show();
+    }
+
+
+    private void doSearchInfo()
+    {
+        Long dateActuelle = System.currentTimeMillis()/1000;
+        Log.i(TAG,mFlightTrack.getIcao());
+        GlobalActivity.startActivity(getActivity(), mFlightTrack.getIcao(), dateActuelle, 2);
     }
 }
