@@ -14,14 +14,19 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.planeapplication.GlobalActivity;
 import com.example.planeapplication.R;
+import com.example.planeapplication.data.Flight;
 import com.example.planeapplication.data.FlightInfo;
 import com.example.planeapplication.data.FlightState;
 import com.example.planeapplication.data.FlightTrack;
 import com.example.planeapplication.data.FlightTrackPath;
+import com.example.planeapplication.ui.flightlist.FlightListAdapter;
 import com.example.planeapplication.ui.flightlist.FlightListFragment;
+import com.example.planeapplication.ui.flightlist.FlightListViewModel;
 import com.example.planeapplication.ui.flighttracking.MapFragment;
 import com.example.planeapplication.ui.flighttracking.MapViewModel;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -59,6 +64,7 @@ public class FlightInfoFragment extends Fragment implements OnMapReadyCallback
     private static final String BEGIN        = "begin";
     private GoogleMap mGoogleMap;
     private MapView mapView;
+    private FlightInfoAdapter mAdapter;
     private FlightInfoViewModel mViewModel;
     private View root;
     private FlightInfo mFlightInfo;
@@ -103,8 +109,23 @@ public class FlightInfoFragment extends Fragment implements OnMapReadyCallback
         tvIcao = root.findViewById(R.id.tv_icao);
         tvIcao.setText(arguments.getString(ICAO));
 
-        if(arguments!=null)
+        if(arguments!=null) {
             mViewModel.loadData(arguments.getString(ICAO), arguments.getLong(BEGIN));
+            mViewModel.loadDataHisto(arguments.getLong(BEGIN), arguments.getString(ICAO));
+        }
+
+
+        mViewModel.flightListLiveData.observe(getViewLifecycleOwner(), new Observer<List<Flight>>()
+        {
+            @Override
+            public void onChanged(List<Flight> flights)
+            {
+                Log.i("SIZE", "updating list with size = " + flights.size());
+                mAdapter.setFlights(flights);
+            }
+        });
+
+
         mViewModel.flightInfo.observe(getViewLifecycleOwner(), new Observer<FlightInfo>()
         {
             @Override
@@ -148,9 +169,13 @@ public class FlightInfoFragment extends Fragment implements OnMapReadyCallback
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
         root = inflater.inflate(R.layout.fragment_info_realtime_plane, container, false);
-
+        RecyclerView recyclerView = root.findViewById(R.id.rv_info);
+        mAdapter = new FlightInfoAdapter();
+        recyclerView.setAdapter(mAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext(), RecyclerView.VERTICAL, false));
         return root;
     }
+
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
