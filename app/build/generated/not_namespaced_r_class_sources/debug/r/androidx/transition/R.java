@@ -99,8 +99,8 @@ public final class R {
         public static final int notification_main_column = 0x7f0800c2;
         public static final int notification_main_column_container = 0x7f0800c3;
         public static final int parent_matrix = 0x7f0800cb;
-        public static final int right_icon = 0x7f0800d4;
-        public static final int right_side = 0x7f0800d5;
+        public static final int right_icon = 0x7f0800d3;
+        public static final int right_side = 0x7f0800d4;
         public static final int save_image_matrix = 0x7f0800d7;
         public static final int save_non_transition_alpha = 0x7f0800d8;
         public static final int save_scale_type = 0x7f0800d9;
@@ -125,12 +125,12 @@ public final class R {
     public static final class layout {
         private layout() {}
 
-        public static final int notification_action = 0x7f0b003d;
-        public static final int notification_action_tombstone = 0x7f0b003e;
-        public static final int notification_template_custom_big = 0x7f0b0045;
-        public static final int notification_template_icon_group = 0x7f0b0046;
-        public static final int notification_template_part_chronometer = 0x7f0b004a;
-        public static final int notification_template_part_time = 0x7f0b004b;
+        public static final int notification_action = 0x7f0b003c;
+        public static final int notification_action_tombstone = 0x7f0b003d;
+        public static final int notification_template_custom_big = 0x7f0b0044;
+        public static final int notification_template_icon_group = 0x7f0b0045;
+        public static final int notification_template_part_chronometer = 0x7f0b0049;
+        public static final int notification_template_part_time = 0x7f0b004a;
     }
     public static final class string {
         private string() {}

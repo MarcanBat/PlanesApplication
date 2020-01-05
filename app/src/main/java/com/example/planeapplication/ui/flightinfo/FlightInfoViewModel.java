@@ -104,7 +104,7 @@ public class FlightInfoViewModel extends AndroidViewModel {
     public void loadDataHisto(long end, String icao){
         // Instantiate the RequestQueue.
 
-        long begin = end - 259200*2;
+        long begin = end - 259200;
 
         icao = icao.replace("\"","");
         RequestQueue queue = Volley.newRequestQueue(getApplication().getApplicationContext());

@@ -1295,7 +1295,7 @@ id filled
 id fixed
 id flightlist
 id forever
-id fragment_info
+id frameLayout
 id from_date
 id from_textview
 id ghost_view
@@ -1375,10 +1375,10 @@ id progress_circular
 id progress_horizontal
 id radio
 id recyclerview
-id recyclerviewInfo
 id right
 id right_icon
 id right_side
+id rv_info
 id satellite
 id save_image_matrix
 id save_non_transition_alpha
@@ -1557,7 +1557,6 @@ layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout flight_list_fragment
 layout flight_tracking_fragment
-layout fragment_flight_info
 layout fragment_gallery
 layout fragment_home
 layout fragment_info_realtime_plane
